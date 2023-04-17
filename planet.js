@@ -7,15 +7,31 @@ idPlanet = 0
 
 planetImg.src = planetUrl[idPlanet]
 titlePlanet.innerText = namePlanet[idPlanet]
+setTimeout(()=>{
+    planetImg.style.opacity = 0
+    titlePlanet.style.opacity = 0
+}, 2000)
 
 setInterval(()=>{
     if(idPlanet == namePlanet.length - 1){
         idPlanet = 0
-        planetImg.src = planetUrl[idPlanet]
-titlePlanet.innerText = namePlanet[idPlanet]
-    }else{
-        idPlanet++
+        planetImg.style.opacity = 1
+        titlePlanet.style.opacity = 1
         planetImg.src = planetUrl[idPlanet]
         titlePlanet.innerText = namePlanet[idPlanet]
+        setTimeout(()=>{
+            planetImg.style.opacity = 0
+            titlePlanet.style.opacity = 0
+        }, 2000)
+    }else{
+        idPlanet++
+        planetImg.style.opacity = 1
+        titlePlanet.style.opacity = 1
+        planetImg.src = planetUrl[idPlanet]
+        titlePlanet.innerText = namePlanet[idPlanet]
+        setTimeout(()=>{
+            planetImg.style.opacity = 0
+            titlePlanet.style.opacity = 0
+        }, 2000)
     }
 },3000)
